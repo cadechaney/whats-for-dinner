@@ -1,27 +1,15 @@
 
-// query Selectors
-    // Radio Buttons
 
-    //Lets cook button
 var letsCookButton = document.querySelector(".let-cook")
 var clearButton = document.querySelector(".clear-button")
 var cookPotImage = document.querySelector(".cookPot-img")
 var secondBox = document.querySelector(".second-box")
 
 
-
-
-
-
-// Event Listeners
-    // Radio Buttons
-//  sidesRadio.addEventListener(null, randomSide)
-//  mainDishRadio.addEventListener("click")
-    // Lets Cook Button
 letsCookButton.addEventListener("click", randomRecipe)
 clearButton.addEventListener('click', clearRecipe)
 
-//Food Item Arrays
+
 sides = [
 "Miso Glazed Carrots",
 "Coleslaw",
@@ -69,19 +57,21 @@ dessert = [ "Apple Pie",
     "Eclairs"]
 
 
-// getelementbyname
+    window.addEventListener("load", function(){
+        console.log(clearButton)
+        clearButton.classList.add("hidden") })
+
 
 
 function getRandomIndex(array) {
     return Math.floor(Math.random() * array.length);
   }
 
-
-  // use for and if else statements to get the random 
-//   var radioOptions = document.getElementsByName("radio");
+// clearButton.style.display = 'none'
 
 function randomRecipe() {
-    clearButton.style.display = ''
+    console.log(clearButton)
+    clearButton.classList.remove("hidden")
     var radioOptions = document.getElementsByName("radio");
     for (var i = 0; i < radioOptions.length; i++) {
         if (radioOptions[i].checked) {
@@ -94,28 +84,28 @@ function randomRecipe() {
     secondBox.innerHTML = `
     <article class = "dish">
         <p class= "You-should-make"> You Should Make: </p>
-        <h1 class= "Dish-name"> ${sides[getRandomIndex(sides)]}!</h1>
+        <h2 class= "Dish-name"> ${sides[getRandomIndex(sides)]}!</h2>
     </article>
     `
  }  else if  (mealOption === 'Main Dishes') {
     secondBox.innerHTML = `
     <article class = "dish">
         <p class= "You-should-make"> You Should Make: </p>
-        <h1 class= "Dish-name"> ${main[getRandomIndex(main)]}!</h1>
+        <h2 class= "Dish-name"> ${main[getRandomIndex(main)]}!</h2>
     </article>
     `
  }  else if  (mealOption === 'Desserts') {
     secondBox.innerHTML = `
     <article class = "dish">
         <p class= "You-should-make"> You Should Make: </p>
-        <h1 class= "Dish-name"> ${dessert[getRandomIndex(dessert)]}!</h1>
+        <h2 class= "Dish-name"> ${dessert[getRandomIndex(dessert)]}!</h2>
     </article>
     `
  }  else if  (mealOption === 'entire meal') {
     secondBox.innerHTML = `
     <article class = "dish">
         <p class= "You-should-make"> You Should Make: </p>
-        <h1 class= "Dish-name"> ${main[getRandomIndex(main)]} with a side of ${sides[getRandomIndex(sides)]} and ${dessert[getRandomIndex(dessert)]} for dessert!</h1>
+        <h2 class= "Dish-name"> ${main[getRandomIndex(main)]} with a side of ${sides[getRandomIndex(sides)]} and ${dessert[getRandomIndex(dessert)]} for dessert!</h2>
     </article>
     `
 
@@ -125,11 +115,10 @@ function randomRecipe() {
 }
 
 function clearRecipe() {
-    // clearButton.classList.add("hidden");
     secondBox.innerHTML = `
     <img class="cookPot-img" src='assets/cookpot.svg' width="175" height="175">
     `
-    clearButton.style.display = 'none'
+    clearButton.classList.add("hidden")
 }
 
 
@@ -137,10 +126,5 @@ function clearRecipe() {
      
 
 
-//the display food button needs to be a conditional that calls one of 
-// the other functions
-// function displayFood() {
-// //  console.log(sides)
-// // console.log(sides[getRandomIndex(sides)])
-// console.log(randomRecipe())
+
 

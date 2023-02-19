@@ -14,12 +14,16 @@ red - #ee5253
     box-sizing: border-box;
 }
 
+h2 {
+    font-size: 24px;
+}
 body {
     background-image: url("assets/burger-friends.jpg");
     background-size: cover;
     margin: 0px;
     height: 100vh;
     max-height: 100vh;
+    font-family: 'Roboto', sans-serif;
 }
 
 
@@ -67,15 +71,16 @@ main {
 
 .clear-button {
     background-color: #95a5a6;
+    color: white;
+    padding: 10px;
     border: none;
     border-radius: 5px;
-    display: flex;
-    flex-direction: row;
-    
-    
+    position: absolute;
+    bottom: 450px;
+    right: 250px;
 }
 
-.second-box:nth-child(2) {
+.second-box {
     height: 450px;
     width: 550px;
     display: flex;
@@ -86,15 +91,18 @@ main {
     padding: 60px;
     box-sizing: border-box;
     
+    position: relative;
 }
-
-
 
 .output-box {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
     
+    
+    
+}
+
+.hidden {
+    display: none;
 }
