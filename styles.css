@@ -54,7 +54,7 @@ main {
     padding: 60px;
 }
 
-button {
+.let-cook {
     background-color:  #0fb9b1;
     border: none;
     border-radius: 5px;
@@ -65,6 +65,15 @@ button {
     justify-content: center;
 }
 
+.clear-button {
+    background-color: #95a5a6;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    
+}
+
 .second-box:nth-child(2) {
     height: 450px;
     width: 550px;
@@ -73,4 +82,5 @@ button {
     align-items: center;
     justify-content: space-evenly;
     background-color: rgba(225, 225, 225, .9);
+    padding: 60px;
 }
