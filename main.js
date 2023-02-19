@@ -81,7 +81,7 @@ function getRandomIndex(array) {
 //   var radioOptions = document.getElementsByName("radio");
 
 function randomRecipe() {
-    clearButton.classList.remove("view")
+    clearButton.style.display = ''
     var radioOptions = document.getElementsByName("radio");
     for (var i = 0; i < radioOptions.length; i++) {
         if (radioOptions[i].checked) {
@@ -94,42 +94,44 @@ function randomRecipe() {
     secondBox.innerHTML = `
     <article class = "dish">
         <p class= "You-should-make"> You Should Make: </p>
-        <p class= "Dish-name"> ${sides[getRandomIndex(sides)]}!</p>
+        <h1 class= "Dish-name"> ${sides[getRandomIndex(sides)]}!</h1>
     </article>
     `
  }  else if  (mealOption === 'Main Dishes') {
     secondBox.innerHTML = `
     <article class = "dish">
         <p class= "You-should-make"> You Should Make: </p>
-        <p class= "Dish-name"> ${main[getRandomIndex(main)]}!</p>
+        <h1 class= "Dish-name"> ${main[getRandomIndex(main)]}!</h1>
     </article>
     `
  }  else if  (mealOption === 'Desserts') {
     secondBox.innerHTML = `
     <article class = "dish">
         <p class= "You-should-make"> You Should Make: </p>
-        <p class= "Dish-name"> ${dessert[getRandomIndex(dessert)]}!</p>
+        <h1 class= "Dish-name"> ${dessert[getRandomIndex(dessert)]}!</h1>
     </article>
     `
  }  else if  (mealOption === 'entire meal') {
     secondBox.innerHTML = `
     <article class = "dish">
         <p class= "You-should-make"> You Should Make: </p>
-        <p class= "Dish-name"> ${main[getRandomIndex(main)]} with a side of ${sides[getRandomIndex(sides)]} and ${dessert[getRandomIndex(dessert)]} for dessert!</p>
+        <h1 class= "Dish-name"> ${main[getRandomIndex(main)]} with a side of ${sides[getRandomIndex(sides)]} and ${dessert[getRandomIndex(dessert)]} for dessert!</h1>
     </article>
     `
 
-
+    
 }
+
 }
 
 function clearRecipe() {
-    clearButton.classList.add("hidden");
+    // clearButton.classList.add("hidden");
     secondBox.innerHTML = `
     <img class="cookPot-img" src='assets/cookpot.svg' width="175" height="175">
     `
-
+    clearButton.style.display = 'none'
 }
+
 
  
      
